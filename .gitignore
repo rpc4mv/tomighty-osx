@@ -11,3 +11,5 @@ src/Pods
 src/Podfile.lock
 
 src/.idea
+
+*.DS_Store
