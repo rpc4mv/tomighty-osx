@@ -14,6 +14,7 @@
     id<TYEventBus> eventBus;
     id<TYSystemTimer> systemTimer;
     id<TYTimerContext> currentTimerContext;
+    BOOL isPaused;
 }
 
 + (id)createWith:(id<TYEventBus>)anEventBus systemTimer:(id<TYSystemTimer>)aSystemTimer
@@ -36,20 +37,8 @@
 {
     currentTimerContext = context;
     
-    TYSystemTimerTrigger trigger = ^()
-    {
-        [context addSeconds:-1];
-        
-        if([context getRemainingSeconds] > 0)
-        {
-            [eventBus publish:TIMER_TICK data:context];
-        }
-        else
-        {
-            [self stop];
-        }
-    };
-    [systemTimer triggerRepeatedly:trigger intervalInSeconds:1];
+    [self setTrigger];
+    
     [eventBus publish:TIMER_START data:context];
 }
 
@@ -57,6 +46,41 @@
 {
     [systemTimer interrupt];
     [eventBus publish:TIMER_STOP data:currentTimerContext];
+}
+
+- (void)togglePause
+{
+    isPaused ? [self resume] : [self pause];
+    
+    isPaused = !isPaused;
+}
+
+- (void)pause
+{
+    if(!isPaused) [systemTimer interrupt];
+}
+
+- (void)resume
+{
+    if(isPaused) [self setTrigger];
+}
+
+- (void)setTrigger
+{
+    TYSystemTimerTrigger trigger = ^()
+    {
+        [currentTimerContext addSeconds:-1];
+        
+        if([currentTimerContext getRemainingSeconds] > 0)
+        {
+            [eventBus publish:TIMER_TICK data:currentTimerContext];
+        }
+        else
+        {
+            [self stop];
+        }
+    };
+    [systemTimer triggerRepeatedly:trigger intervalInSeconds:1];
 }
 
 @end

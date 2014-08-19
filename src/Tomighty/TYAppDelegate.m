@@ -98,6 +98,11 @@
     [tomighty stopTimer];
 }
 
+- (IBAction)pauseTimer:(id)sender
+{
+    [tomighty pauseTimer];
+}
+
 - (IBAction)resetPomodoroCount:(id)sender
 {
     [tomighty resetPomodoroCount];

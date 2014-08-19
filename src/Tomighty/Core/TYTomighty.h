@@ -13,6 +13,7 @@
 - (void)startShortBreak;
 - (void)startLongBreak;
 - (void)stopTimer;
+- (void)pauseTimer;
 - (void)resetPomodoroCount;
 
 @end

@@ -13,5 +13,4 @@ typedef void (^TYSystemTimerTrigger)();
 
 - (void)triggerRepeatedly:(TYSystemTimerTrigger)trigger intervalInSeconds:(int)seconds;
 - (void)interrupt;
-
 @end

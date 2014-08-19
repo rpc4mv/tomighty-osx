@@ -15,6 +15,7 @@
 @property (weak) IBOutlet NSMenu *statusMenu;
 @property (weak) IBOutlet NSMenuItem *remainingTimeMenuItem;
 @property (weak) IBOutlet NSMenuItem *stopTimerMenuItem;
+@property (weak) IBOutlet NSMenuItem *pauseTimerMenuItem;
 @property (weak) IBOutlet NSMenuItem *pomodoroCountMenuItem;
 @property (weak) IBOutlet NSMenuItem *resetPomodoroCountMenuItem;
 @property (weak) IBOutlet NSMenuItem *startPomodoroMenuItem;
@@ -25,6 +26,7 @@
 - (IBAction)startShortBreak:(id)sender;
 - (IBAction)startLongBreak:(id)sender;
 - (IBAction)stopTimer:(id)sender;
+- (IBAction)pauseTimer:(id)sender;
 - (IBAction)resetPomodoroCount:(id)sender;
 - (IBAction)showPreferences:(id)sender;
 
