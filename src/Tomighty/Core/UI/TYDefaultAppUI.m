@@ -33,6 +33,7 @@
     [statusMenu enableStartShortBreakItem:true];
     [statusMenu enableStartLongBreakItem:true];
     [statusMenu enablePauseTimerItem:false];
+    [statusMenu setPauseTimerItemStatePaused];
     [statusIcon changeIcon:ICON_STATUS_IDLE];
     [self updateRemainingTime:0 withMode:TYAppUIRemainingTimeModeDefault];
 }
@@ -69,12 +70,13 @@
 
 - (void)switchToPausedState
 {
-    
+    [statusMenu setPauseTimerItemStateResume];
+    [statusIcon setStatusText:@"Paused"];
 }
 
 - (void)switchToResumedState
 {
-    
+    [statusMenu setPauseTimerItemStatePaused];
 }
 
 - (void)updateRemainingTime:(int)remainingSeconds withMode:(TYAppUIRemainingTimeMode)mode;

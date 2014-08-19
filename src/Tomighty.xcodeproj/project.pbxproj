@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D3BA9BF19A3BCC30059E8CC /* icon-pause-timer.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 1D3BA9BE19A3BCC30059E8CC /* icon-pause-timer.tiff */; };
+		1D3BA9C319A3CBA90059E8CC /* icon-resume-timer.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 1D3BA9C219A3CBA90059E8CC /* icon-resume-timer.tiff */; };
 		300AE29218D1444400264309 /* PreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 300AE29018D1444400264309 /* PreferencesWindow.xib */; };
 		300AE29518D1471F00264309 /* TYPreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 300AE29418D1471F00264309 /* TYPreferencesWindowController.m */; };
 		301A007918BD417200B8DEE0 /* TYDefaultTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 301A007818BD417200B8DEE0 /* TYDefaultTimer.m */; };
@@ -86,6 +88,8 @@
 
 /* Begin PBXFileReference section */
 		0B1A27968CA44FEFB1DA3DB3 /* libPods-TomightyTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TomightyTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D3BA9BE19A3BCC30059E8CC /* icon-pause-timer.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "icon-pause-timer.tiff"; sourceTree = "<group>"; };
+		1D3BA9C219A3CBA90059E8CC /* icon-resume-timer.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "icon-resume-timer.tiff"; sourceTree = "<group>"; };
 		300AE29118D1444400264309 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PreferencesWindow.xib; sourceTree = "<group>"; };
 		300AE29318D1471F00264309 /* TYPreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TYPreferencesWindowController.h; path = Core/UI/TYPreferencesWindowController.h; sourceTree = "<group>"; };
 		300AE29418D1471F00264309 /* TYPreferencesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TYPreferencesWindowController.m; path = Core/UI/TYPreferencesWindowController.m; sourceTree = "<group>"; };
@@ -407,7 +411,9 @@
 				30C383C318CFC9FC00FABFFE /* icon-status-long-break.tiff */,
 				30C383C418CFC9FC00FABFFE /* icon-status-idle.tiff */,
 				30C383C518CFC9FC00FABFFE /* icon-status-pomodoro.tiff */,
+				1D3BA9C219A3CBA90059E8CC /* icon-resume-timer.tiff */,
 				30C383C618CFC9FC00FABFFE /* icon-status-short-break.tiff */,
+				1D3BA9BE19A3BCC30059E8CC /* icon-pause-timer.tiff */,
 				30C383C718CFC9FC00FABFFE /* icon-status-alternate.tiff */,
 				30C383C818CFC9FC00FABFFE /* icon-stop-timer.tiff */,
 			);
@@ -575,6 +581,8 @@
 				30C383C918CFC9FC00FABFFE /* icon-clock.tiff in Resources */,
 				30C383CB18CFC9FC00FABFFE /* icon-start-pomodoro.tiff in Resources */,
 				30C383D018CFC9FC00FABFFE /* icon-status-short-break.tiff in Resources */,
+				1D3BA9BF19A3BCC30059E8CC /* icon-pause-timer.tiff in Resources */,
+				1D3BA9C319A3CBA90059E8CC /* icon-resume-timer.tiff in Resources */,
 				30C383CA18CFC9FC00FABFFE /* icon-start-long-break.tiff in Resources */,
 				300AE29218D1444400264309 /* PreferencesWindow.xib in Resources */,
 				304AF82618BD04BE00A2EA74 /* Credits.rtf in Resources */,

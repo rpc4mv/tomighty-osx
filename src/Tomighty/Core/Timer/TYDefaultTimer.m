@@ -57,12 +57,18 @@
 
 - (void)pause
 {
-    if(!isPaused) [systemTimer interrupt];
+    if(!isPaused) {
+        [systemTimer interrupt];
+        [eventBus publish:TIMER_PAUSED data:currentTimerContext];
+    }
 }
 
 - (void)resume
 {
-    if(isPaused) [self setTrigger];
+    if(isPaused) {
+        [self setTrigger];
+        [eventBus publish:TIMER_RESUMED data:currentTimerContext];
+    }
 }
 
 - (void)setTrigger

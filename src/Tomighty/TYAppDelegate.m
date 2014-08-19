@@ -41,11 +41,13 @@
     TYSyntheticEventPublisher *syntheticEventPublisher;
     TYUserInterfaceAgent *userInterfaceAgent;
     TYPreferencesWindowController *preferencesWindow;
+    TYImageLoader *imageLoader;
+
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    TYImageLoader *imageLoader = [[TYImageLoader alloc] init];
+    imageLoader = [[TYImageLoader alloc] init];
     
     id <TYEventBus> eventBus = [[TYDefaultEventBus alloc] init];
     id <TYSystemTimer> systemTimer = [[TYDefaultSystemTimer alloc] init];
@@ -65,17 +67,18 @@
     [soundAgent playSoundsInResponseToEventsFrom:eventBus];
     [userInterfaceAgent updateAppUiInResponseToEventsFrom:eventBus];
     
-    [self initMenuItemsIcons:imageLoader];
+    [self initMenuItemsIcons];
     
     [eventBus publish:APP_INIT data:nil];
 }
 
-- (void)initMenuItemsIcons:(TYImageLoader *)imageLoader {
+- (void)initMenuItemsIcons {
     [self.remainingTimeMenuItem setImage:[imageLoader loadIcon:@"icon-clock"]];
     [self.stopTimerMenuItem setImage:[imageLoader loadIcon:@"icon-stop-timer"]];
     [self.startPomodoroMenuItem setImage:[imageLoader loadIcon:@"icon-start-pomodoro"]];
     [self.startShortBreakMenuItem setImage:[imageLoader loadIcon:@"icon-start-short-break"]];
     [self.startLongBreakMenuItem setImage:[imageLoader loadIcon:@"icon-start-long-break"]];
+    [self.pauseTimerMenuItem setImage:[imageLoader loadIcon:@"icon-pause-timer"]];
 }
 
 - (IBAction)startPomodoro:(id)sender
@@ -146,12 +149,26 @@
 
 - (void)enablePauseTimerItem:(BOOL)enable
 {
-    [self enableTimerMenuItem:self.pauseTimerMenuItem enable:enable];
+    [self.pauseTimerMenuItem setEnabled:enable];
 }
 
 - (void)enableResetPomodoroCountItem:(BOOL)enable
 {
     [self.resetPomodoroCountMenuItem setEnabled:enable];
+}
+
+- (void)setPauseTimerItemStatePaused
+{
+    [self.pauseTimerMenuItem setTitle:@"Pause"];
+    [self.pauseTimerMenuItem setImage:[imageLoader loadIcon:@"icon-pause-timer"]];
+    
+
+}
+
+- (void)setPauseTimerItemStateResume
+{
+    [self.pauseTimerMenuItem setTitle:@"Resume"];
+    [self.pauseTimerMenuItem setImage:[imageLoader loadIcon:@"icon-resume-timer"]];
 }
 
 - (void)setRemainingTimeText:(NSString *)text
