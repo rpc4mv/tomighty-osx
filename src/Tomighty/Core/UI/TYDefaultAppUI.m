@@ -32,6 +32,7 @@
     [statusMenu enableStartPomodoroItem:true];
     [statusMenu enableStartShortBreakItem:true];
     [statusMenu enableStartLongBreakItem:true];
+    [statusMenu enablePauseTimerItem:false];
     [statusIcon changeIcon:ICON_STATUS_IDLE];
     [self updateRemainingTime:0 withMode:TYAppUIRemainingTimeModeDefault];
 }
@@ -42,6 +43,7 @@
     [statusMenu enableStartPomodoroItem:false];
     [statusMenu enableStartShortBreakItem:true];
     [statusMenu enableStartLongBreakItem:true];
+    [statusMenu enablePauseTimerItem:true];
     [statusIcon changeIcon:ICON_STATUS_POMODORO];
 }
 
@@ -51,6 +53,7 @@
     [statusMenu enableStartPomodoroItem:true];
     [statusMenu enableStartShortBreakItem:false];
     [statusMenu enableStartLongBreakItem:true];
+    [statusMenu enablePauseTimerItem:true];
     [statusIcon changeIcon:ICON_STATUS_SHORT_BREAK];
 }
 
@@ -60,7 +63,18 @@
     [statusMenu enableStartPomodoroItem:true];
     [statusMenu enableStartShortBreakItem:true];
     [statusMenu enableStartLongBreakItem:false];
+    [statusMenu enablePauseTimerItem:true];
     [statusIcon changeIcon:ICON_STATUS_LONG_BREAK];
+}
+
+- (void)switchToPausedState
+{
+    
+}
+
+- (void)switchToResumedState
+{
+    
 }
 
 - (void)updateRemainingTime:(int)remainingSeconds withMode:(TYAppUIRemainingTimeMode)mode;

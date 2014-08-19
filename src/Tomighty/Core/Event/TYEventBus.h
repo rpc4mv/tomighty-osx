@@ -16,16 +16,18 @@ typedef NS_ENUM(NSInteger, TYEventType)
     TIMER_STOP                = 3,
     TIMER_ABORT               = 4,
     TIMER_GOES_OFF            = 5,
+    TIMER_PAUSED              = 6,
+    TIMER_RESUMED             = 7,
     
-    POMODORO_START            = 6,
-    BREAK_START               = 7,
-    SHORT_BREAK_START         = 8,
-    LONG_BREAK_START          = 9,
+    POMODORO_START            = 8,
+    BREAK_START               = 9,
+    SHORT_BREAK_START         = 10,
+    LONG_BREAK_START          = 11,
     
-    POMODORO_COMPLETE         = 10,
-    POMODORO_COUNT_CHANGE     = 11,
+    POMODORO_COMPLETE         = 12,
+    POMODORO_COUNT_CHANGE     = 13,
     
-    PREFERENCE_CHANGE         = 12
+    PREFERENCE_CHANGE         = 14
 };
 
 typedef void (^TYEventSubscriber)(id eventData);

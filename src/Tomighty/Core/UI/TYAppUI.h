@@ -25,6 +25,8 @@ typedef NS_ENUM(int, TYAppUIStatusIconTextFormat) {
 - (void)switchToPomodoroState;
 - (void)switchToShortBreakState;
 - (void)switchToLongBreakState;
+- (void)switchToPausedState;
+- (void)switchToResumedState;
 - (void)updateRemainingTime:(int)remainingSeconds withMode:(TYAppUIRemainingTimeMode)mode;
 - (void)updatePomodoroCount:(int)count;
 - (void)setStatusIconTextFormat:(TYAppUIStatusIconTextFormat)textFormat;

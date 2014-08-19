@@ -144,6 +144,11 @@
     [self enableTimerMenuItem:self.startLongBreakMenuItem enable:enable];
 }
 
+- (void)enablePauseTimerItem:(BOOL)enable
+{
+    [self enableTimerMenuItem:self.pauseTimerMenuItem enable:enable];
+}
+
 - (void)enableResetPomodoroCountItem:(BOOL)enable
 {
     [self.resetPomodoroCountMenuItem setEnabled:enable];

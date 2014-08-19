@@ -42,6 +42,14 @@
         [ui switchToIdleState];
     }];
     
+    [eventBus subscribeTo:TIMER_PAUSED subscriber:^(id eventData) {
+        [ui switchToPausedState];
+    }];
+    
+    [eventBus subscribeTo:TIMER_RESUMED subscriber:^(id eventData) {
+        [ui switchToResumedState];
+    }];
+    
     [eventBus subscribeTo:SHORT_BREAK_START subscriber:^(id eventData) {
         [ui switchToShortBreakState];
     }];
