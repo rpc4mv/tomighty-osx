@@ -16,6 +16,8 @@ NSString * const PREF_PLAY_SOUND_WHEN_TIMER_GOES_OFF         = @"org.tomighty.so
 NSString * const PREF_PLAY_TICKTOCK_SOUND_DURING_POMODORO  = @"org.tomighty.sound.play_tick_tock_during_pomodoro";
 NSString * const PREF_PLAY_TICKTOCK_SOUND_DURING_BREAK     = @"org.tomighty.sound.play_tick_tock_during_break";
 NSString * const PREF_STATUS_ICON_TIME_FORMAT     = @"org.tomighty.general.status_icon_time_format";
+NSString * const PREF_AUTO_POMODORO_TRAANSITION = @"org.tomighty.general.auto_pomodoro_transition";
+
 
 // formats must have same values as TYAppUIStatusIconTextFormat enum in TYAppUI.h
 // TODO : move this values to some common place?
@@ -37,13 +39,14 @@ int const PREF_STATUS_ICON_TIME_FORMAT_SECONDS = 2;
         
         NSMutableDictionary *defaultValues = [NSMutableDictionary dictionary];
         
-        [defaultValues setObject:[NSNumber numberWithInt:25] forKey:PREF_TIME_POMODORO];
-        [defaultValues setObject:[NSNumber numberWithInt:5] forKey:PREF_TIME_SHORT_BREAK];
-        [defaultValues setObject:[NSNumber numberWithInt:15] forKey:PREF_TIME_LONG_BREAK];
-        [defaultValues setObject:[NSNumber numberWithInt:true] forKey:PREF_PLAY_SOUND_WHEN_TIMER_STARTS];
-        [defaultValues setObject:[NSNumber numberWithInt:true] forKey:PREF_PLAY_SOUND_WHEN_TIMER_GOES_OFF];
-        [defaultValues setObject:[NSNumber numberWithInt:true] forKey:PREF_PLAY_TICKTOCK_SOUND_DURING_POMODORO];
-        [defaultValues setObject:[NSNumber numberWithInt:true] forKey:PREF_PLAY_TICKTOCK_SOUND_DURING_BREAK];
+        [defaultValues setObject:@25    forKey:PREF_TIME_POMODORO];
+        [defaultValues setObject:@5     forKey:PREF_TIME_SHORT_BREAK];
+        [defaultValues setObject:@15    forKey:PREF_TIME_LONG_BREAK];
+        [defaultValues setObject:@YES   forKey:PREF_PLAY_SOUND_WHEN_TIMER_STARTS];
+        [defaultValues setObject:@YES   forKey:PREF_PLAY_SOUND_WHEN_TIMER_GOES_OFF];
+        [defaultValues setObject:@YES   forKey:PREF_PLAY_TICKTOCK_SOUND_DURING_POMODORO];
+        [defaultValues setObject:@YES   forKey:PREF_PLAY_TICKTOCK_SOUND_DURING_BREAK];
+        [defaultValues setObject:@YES   forKey:PREF_AUTO_POMODORO_TRAANSITION];
         [defaultValues setObject:[NSNumber numberWithInt:PREF_STATUS_ICON_TIME_FORMAT_NONE] forKey:PREF_STATUS_ICON_TIME_FORMAT];
 
         [[NSUserDefaults standardUserDefaults] registerDefaults:defaultValues];
